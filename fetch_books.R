@@ -70,7 +70,7 @@ for (chapter in chapters) {
       qmd_content <- paste0(qmd_content, "Link: [", chapter_content$link[entry], "](", chapter_content$link[entry], ")\n\n")
     }
     if (!is.na(chapter_content$physical[entry])) {
-      qmd_content <- paste0(qmd_content, "Physical copy available: ", chapter_content$physical[entry], "\n\n")
+      qmd_content <- paste0(qmd_content, "Physical copy available: [", chapter_content$physical[entry], "](", chapter_content$physical[entry], ")\n\n")
     }
   }
   

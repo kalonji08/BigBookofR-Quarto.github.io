@@ -8,7 +8,7 @@ This textbook goes farther than just teaching you to make computational models u
 
 Link: [https://www.causact.com/](https://www.causact.com/)
 
-Physical copy available: https://amzn.to/4aaG5GX
+Physical copy available: [https://amzn.to/4aaG5GX](https://amzn.to/4aaG5GX)
 
 ## A Little Book of R for Multivariate Analysis
 
@@ -326,7 +326,7 @@ This book covers the fundamentals of data science and statistics. The first half
 
 Link: [http://www.modernstatisticswithr.com/](http://www.modernstatisticswithr.com/)
 
-Physical copy available: https://amzn.to/3RytIxc
+Physical copy available: [https://amzn.to/3RytIxc](https://amzn.to/3RytIxc)
 
 ## One Way ANOVA with R Completely Randomized Design - Between Groups
 

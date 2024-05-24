@@ -66,7 +66,7 @@ R for the Rest of Us will show ways that R can be used beyond complex statistica
 
 Link: [https://book.rfortherestofus.com/](https://book.rfortherestofus.com/)
 
-Physical copy available: https://amzn.to/3RBuKbO
+Physical copy available: [https://amzn.to/3RBuKbO](https://amzn.to/3RBuKbO)
 
 ## Reproducible Analytical Pipelines (RAP) Companion
 

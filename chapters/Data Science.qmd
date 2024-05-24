@@ -265,7 +265,7 @@ wrangling, visualising, and exploring data.
 
 Link: [https://r4ds.hadley.nz/](https://r4ds.hadley.nz/)
 
-Physical copy available: https://amzn.to/4afCNC6
+Physical copy available: [https://amzn.to/4afCNC6](https://amzn.to/4afCNC6)
 
 ## R for Data Science Solutions
 

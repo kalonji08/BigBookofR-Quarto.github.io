@@ -35,7 +35,7 @@ This book highlights the principles of psychological assessment to help research
 
 Link: [https://isaactpetersen.github.io/Principles-Psychological-Assessment/](https://isaactpetersen.github.io/Principles-Psychological-Assessment/)
 
-Physical copy available: https://www.routledge.com/Principles-of-Psychological-Assessment-With-Applied-Examples-in-R/Petersen/p/book/9781032413068
+Physical copy available: [https://www.routledge.com/Principles-of-Psychological-Assessment-With-Applied-Examples-in-R/Petersen/p/book/9781032413068](https://www.routledge.com/Principles-of-Psychological-Assessment-With-Applied-Examples-in-R/Petersen/p/book/9781032413068)
 
 ## Psychometrics in Exercises using R and RStudio
 
