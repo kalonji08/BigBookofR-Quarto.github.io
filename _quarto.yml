@@ -1,0 +1,89 @@
+project:
+  type: book
+
+book:
+  title: "Big Book of R"
+  author: "Oscar Baruffa"
+  date: "`r format(Sys.time(), '%d %B, %Y')`"
+
+  chapters:
+    - index.qmd
+    - 010-start_here.qmd
+    - 015-book_clubs.qmd
+    - chapters/Career and Community.qmd
+    - chapters/R Programming.qmd
+    - chapters/Data Science.qmd
+    - chapters/Life Sciences.qmd
+    - chapters/Bookdown.qmd
+    - chapters/Reports.qmd
+    - chapters/Art.qmd
+    - chapters/Economics.qmd
+    - chapters/People Analytics.qmd
+    - chapters/Blogdown.qmd
+    - chapters/Packages.qmd
+    - chapters/API.qmd
+    - chapters/Getting Cleaning and Wrangling Data.qmd
+    - chapters/Sport Analytics.qmd
+    - chapters/Time Series Analysis and Forecasting.qmd
+    - chapters/Español.qmd
+    - chapters/Shiny.qmd
+    - chapters/Field Specific.qmd
+    - chapters/Journalism.qmd
+    - chapters/Text Analysis.qmd
+    - chapters/Social Science.qmd
+    - chapters/Statistics.qmd
+    - chapters/Finance.qmd
+    - chapters/Data Visualization.qmd
+    - chapters/R Package Development.qmd
+    - chapters/Machine Learning.qmd
+    - chapters/Teaching.qmd
+    - chapters/Version Control.qmd
+    - chapters/Workflow.qmd
+    - chapters/Archeology.qmd
+    - chapters/Psychology.qmd
+    - chapters/Data Databases and Engineering.qmd
+    - chapters/Network Analysis.qmd
+    - chapters/Big Data.qmd
+    - chapters/Geospatial.qmd
+    - chapters/Other Compendiums.qmd
+    
+format:
+  html:
+    theme: cosmo
+    include-in-header:
+      - plausible-analytics.html
+      - social.html
+      - text: |
+          <style>
+          #quarto-sidebar .menu-text {
+            display: flex;
+          }
+          #quarto-sidebar .chapter-number {
+            display: block;
+            width: 1em;
+            text-align: right;
+          }
+          #quarto-sidebar .chapter-title {
+            display: block;
+            padding-left: 10px;
+            text-indent: -10px;
+            width: 100%;
+          }
+          #quarto-toc {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px; /* Adjust width as needed */
+            height: 100%;
+            overflow: auto;
+          }
+          #quarto-main {
+            margin-left: 210px; /* Adjust so content does not overlap with TOC */
+          }
+          /* CSS to hide the search widget */
+          .quarto-search, .search-input {
+            display: none;
+          }
+          </style>
+    include-after-body: footer.html
+    edit: https://github.com/oscarbaruffa/BigBookofR/edit/main/%s
