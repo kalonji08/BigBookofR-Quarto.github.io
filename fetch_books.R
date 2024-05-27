@@ -8,7 +8,6 @@ library(readr)
 gs4_deauth()
 
 # Load data from Google Sheets
-# Load data from Google Sheets
 books_source <- read_sheet("https://docs.google.com/spreadsheets/d/1vufdtrIzF5wbkWZUG_HGIBAXpT1C4joPx2qTh5aYzDg", sheet = "books")
 chapter_info <- read_sheet("https://docs.google.com/spreadsheets/d/1vufdtrIzF5wbkWZUG_HGIBAXpT1C4joPx2qTh5aYzDg/edit#gid=477753205", sheet="chapter_info")
 
@@ -27,8 +26,11 @@ chapters <- books_source %>%
   distinct(chapters) %>%
   pull()
 
+# Sort the chapters alphabetically excluding "Career and Community" and "Other Compendiums"
+sorted_chapters <- sort(chapters[chapters != "Career and Community" & chapters != "Other Compendiums"])
+
 # Generate .qmd files for each chapter
-for (chapter in chapters) {
+for (chapter in c("Career and Community", sorted_chapters, "Other Compendiums")) {
   chapter_content <- books_source %>%
     filter(chapters == chapter)
   
@@ -80,3 +82,10 @@ for (chapter in chapters) {
   # Write to the .qmd file
   writeLines(qmd_content, con = file_name)
 }
+
+# Save the chapter list with file paths as a text file
+output_file <- "chapter_list.txt"
+chapter_paths <- c(paste0("- chapters/Career and Community.qmd"), 
+                   paste0("- chapters/", gsub("[^[:alnum:] ]", "", sorted_chapters), ".qmd"),
+                   paste0("- chapters/Other Compendiums.qmd"))
+writeLines(chapter_paths, output_file)

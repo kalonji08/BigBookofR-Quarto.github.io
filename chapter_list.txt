@@ -5,9 +5,9 @@
 - chapters/Big Data.qmd
 - chapters/Blogdown.qmd
 - chapters/Bookdown.qmd
-- chapters/Data Databases and Engineering.qmd
 - chapters/Data Science.qmd
 - chapters/Data Visualization.qmd
+- chapters/Data Databases and Engineering.qmd
 - chapters/Economics.qmd
 - chapters/Español.qmd
 - chapters/Field Specific.qmd
@@ -21,9 +21,9 @@
 - chapters/Packages.qmd
 - chapters/People Analytics.qmd
 - chapters/Psychology.qmd
-- chapters/Reports.qmd
 - chapters/R Package Development.qmd
 - chapters/R Programming.qmd
+- chapters/Reports.qmd
 - chapters/Shiny.qmd
 - chapters/Social Science.qmd
 - chapters/Sport Analytics.qmd
