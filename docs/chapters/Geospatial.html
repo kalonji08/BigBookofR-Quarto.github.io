@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>geospatial</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" defer="" data-domain="bigbookofr.com" src="https://plausible.io/js/plausible.outbound-links.js"></script>
+</head><body><a rel="me" href="https://fosstodon.org/@OscarBaruffa"></a>
+
+
+<meta property="og:title" content="">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://www.bigbookofr.com/images/big_book_social.png">
+<meta property="og:url" content="https://www.bigbookofr.com/">
+<meta property="og:site_name" content="Big Book of R">
+
+<meta name="twitter:title" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image:alt" content="400+ Free R programming books">
+<meta name="twitter:site" content="@oscarbaruffa">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.bigbookofr.com/images/big_book_social.png">
+
+
+
+
+
+
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#geospatial" id="toc-geospatial" class="nav-link active" data-scroll-target="#geospatial">Geospatial</a>
+  <ul>
+  <li><a href="#a-crash-course-in-geographic-information-systems-gis-using-r" id="toc-a-crash-course-in-geographic-information-systems-gis-using-r" class="nav-link" data-scroll-target="#a-crash-course-in-geographic-information-systems-gis-using-r">A Crash Course in Geographic Information Systems (GIS) using R</a></li>
+  <li><a href="#an-introduction-to-spatial-data-analysis-and-statistics-a-course-in-r" id="toc-an-introduction-to-spatial-data-analysis-and-statistics-a-course-in-r" class="nav-link" data-scroll-target="#an-introduction-to-spatial-data-analysis-and-statistics-a-course-in-r">An Introduction to Spatial Data Analysis and Statistics: A Course in R</a></li>
+  <li><a href="#applied-microeconometrics" id="toc-applied-microeconometrics" class="nav-link" data-scroll-target="#applied-microeconometrics">Applied Microeconometrics</a></li>
+  <li><a href="#geocomputation-with-r" id="toc-geocomputation-with-r" class="nav-link" data-scroll-target="#geocomputation-with-r">Geocomputation with R</a></li>
+  <li><a href="#geospatial-health-data-modeling-and-visualization-with-r-inla-and-shiny" id="toc-geospatial-health-data-modeling-and-visualization-with-r-inla-and-shiny" class="nav-link" data-scroll-target="#geospatial-health-data-modeling-and-visualization-with-r-inla-and-shiny">Geospatial Health Data Modeling and Visualization with R-INLA and Shiny</a></li>
+  <li><a href="#intro-to-gis-and-spatial-analysis" id="toc-intro-to-gis-and-spatial-analysis" class="nav-link" data-scroll-target="#intro-to-gis-and-spatial-analysis">Intro to GIS and Spatial Analysis</a></li>
+  <li><a href="#introduction-to-spatial-data-programming-with-r" id="toc-introduction-to-spatial-data-programming-with-r" class="nav-link" data-scroll-target="#introduction-to-spatial-data-programming-with-r">Introduction to Spatial Data Programming with R</a></li>
+  <li><a href="#introduction-to-urban-accessibility" id="toc-introduction-to-urban-accessibility" class="nav-link" data-scroll-target="#introduction-to-urban-accessibility">Introduction to urban accessibility</a></li>
+  <li><a href="#predictive-soil-mapping-with-r" id="toc-predictive-soil-mapping-with-r" class="nav-link" data-scroll-target="#predictive-soil-mapping-with-r">Predictive Soil Mapping with R</a></li>
+  <li><a href="#r-for-geographic-data-science" id="toc-r-for-geographic-data-science" class="nav-link" data-scroll-target="#r-for-geographic-data-science">R for Geographic Data Science</a></li>
+  <li><a href="#spatial-data-science-with-applications-in-r" id="toc-spatial-data-science-with-applications-in-r" class="nav-link" data-scroll-target="#spatial-data-science-with-applications-in-r">Spatial Data Science With applications in R</a></li>
+  <li><a href="#spatial-data-science-with-r" id="toc-spatial-data-science-with-r" class="nav-link" data-scroll-target="#spatial-data-science-with-r">Spatial Data Science with R</a></li>
+  <li><a href="#spatial-microsimulation-with-r" id="toc-spatial-microsimulation-with-r" class="nav-link" data-scroll-target="#spatial-microsimulation-with-r">Spatial Microsimulation with R</a></li>
+  <li><a href="#spatial-modelling-for-data-scientists" id="toc-spatial-modelling-for-data-scientists" class="nav-link" data-scroll-target="#spatial-modelling-for-data-scientists">Spatial Modelling for Data Scientists</a></li>
+  <li><a href="#spatial-statistics-for-data-science-theory-and-practice-with-r" id="toc-spatial-statistics-for-data-science-theory-and-practice-with-r" class="nav-link" data-scroll-target="#spatial-statistics-for-data-science-theory-and-practice-with-r">Spatial Statistics for Data Science: Theory and Practice with R</a></li>
+  <li><a href="#spatial-sampling-with-r" id="toc-spatial-sampling-with-r" class="nav-link" data-scroll-target="#spatial-sampling-with-r">Spatial sampling with R</a></li>
+  <li><a href="#using-r-for-digital-soil-mapping" id="toc-using-r-for-digital-soil-mapping" class="nav-link" data-scroll-target="#using-r-for-digital-soil-mapping">Using R for Digital Soil Mapping</a></li>
+  <li><a href="#sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" id="toc-sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" class="nav-link" data-scroll-target="#sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series">sits: Data Analysis and Machine Learning on Earth Observation Data Cubes with Satellite Image Time Series</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="geospatial" class="level1">
+<h1>Geospatial</h1>
+<section id="a-crash-course-in-geographic-information-systems-gis-using-r" class="level2">
+<h2 class="anchored" data-anchor-id="a-crash-course-in-geographic-information-systems-gis-using-r">A Crash Course in Geographic Information Systems (GIS) using R</h2>
+<ul>
+<li>Michael Branion-Calles</li>
+</ul>
+<p>Introduction into concepts for GIS and spatial data in R. Later chapters are not finished.</p>
+<p>Link: <a href="https://bookdown.org/michael_bcalles/gis-crash-course-in-r/">https://bookdown.org/michael_bcalles/gis-crash-course-in-r/</a></p>
+</section>
+<section id="an-introduction-to-spatial-data-analysis-and-statistics-a-course-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="an-introduction-to-spatial-data-analysis-and-statistics-a-course-in-r">An Introduction to Spatial Data Analysis and Statistics: A Course in R</h2>
+<ul>
+<li>Antonio Paez</li>
+</ul>
+<p>The objective of this book is to introduce selected topics in applied spatial statistics. My aim with this book is to introduce key concepts and techniques in the statistical analysis of spatial data in an intuitive way. While there are other resources that offer more advanced treatments of every single one of these topics, this book should be appealing to undergraduate students or others who are approaching the topic for the first time.</p>
+<p>Link: <a href="https://paezha.github.io/spatial-analysis-r/">https://paezha.github.io/spatial-analysis-r/</a></p>
+</section>
+<section id="applied-microeconometrics" class="level2">
+<h2 class="anchored" data-anchor-id="applied-microeconometrics">Applied Microeconometrics</h2>
+<ul>
+<li>Paula Moraga</li>
+</ul>
+<p>The book combines theory and practice using real-world data science examples such as disease risk mapping, air pollution prediction, species distribution modeling, crime mapping, and real state analyses.</p>
+<p>Link: <a href="https://www.paulamoraga.com/book-spatial/index.html">https://www.paulamoraga.com/book-spatial/index.html</a></p>
+</section>
+<section id="geocomputation-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="geocomputation-with-r">Geocomputation with R</h2>
+<ul>
+<li>Robin Lovelace</li>
+<li>Jakub Nowosad</li>
+<li>Jannes Muenchow</li>
+</ul>
+<p>This is the online home of Geocomputation with R, a book on geographic data analysis, visualization and modeling.</p>
+<p>Link: <a href="https://geocompr.robinlovelace.net/">https://geocompr.robinlovelace.net/</a></p>
+</section>
+<section id="geospatial-health-data-modeling-and-visualization-with-r-inla-and-shiny" class="level2">
+<h2 class="anchored" data-anchor-id="geospatial-health-data-modeling-and-visualization-with-r-inla-and-shiny">Geospatial Health Data Modeling and Visualization with R-INLA and Shiny</h2>
+<ul>
+<li>Paula Moraga</li>
+</ul>
+<p>This book describes spatial and spatio-temporal statistical methods and visualization techniques to analyze georeferenced health data in R. After a detailed introduction of geospatial data, the book shows how to develop Bayesian hierarchical models for disease mapping and apply computational approaches such as the integrated nested Laplace approximation (INLA) and the stochastic partial differential equation (SPDE) to analyze areal and geostatistical data.</p>
+<p>Link: <a href="https://www.paulamoraga.com/book-geospatial/">https://www.paulamoraga.com/book-geospatial/</a></p>
+</section>
+<section id="intro-to-gis-and-spatial-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="intro-to-gis-and-spatial-analysis">Intro to GIS and Spatial Analysis</h2>
+<ul>
+<li>Manuel Gimond</li>
+</ul>
+<p>A well structures book which serves as an introduction to GIS and spatial data analysis. The book is structures around the authors Introduction to GIS and Spatial Analysis course (ES214). The book provides a good introduction to working with geographical datasets and performing spatial analysis such as point pattern analysis, hypothesis testing, spatial autocorrelation and spatial interpolation,</p>
+<p>Link: <a href="https://mgimond.github.io/Spatial/index.html">https://mgimond.github.io/Spatial/index.html</a></p>
+</section>
+<section id="introduction-to-spatial-data-programming-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-spatial-data-programming-with-r">Introduction to Spatial Data Programming with R</h2>
+<ul>
+<li><a href="https://twitter.com/MichaelDorman84">Michael Dorman</a></li>
+</ul>
+<p>This book introduces processing and analysis methods for working with spatial data in R. The book is composed of two parts. The <em>first</em> part gives an overview of the basic syntax and usage of the R language, required before we can start working with spatial data. The <em>second</em> part then covers spatial data workflows, including how to process rasters, vector layers, and both of them together, as well as two selected advanced topics: spatio-temporal data and spatial interpolation.</p>
+<p>Link: <a href="https://geobgu.xyz/r">https://geobgu.xyz/r</a></p>
+</section>
+<section id="introduction-to-urban-accessibility" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-urban-accessibility">Introduction to urban accessibility</h2>
+<ul>
+<li>Rafael H. M. Pereira</li>
+<li>Daniel Herszenhut</li>
+</ul>
+<p>The aim of this book is to equip its readers with the fundamental concepts, the data analysis skills and the processing tools needed to perform urban accessibility analyses and transportation projects impact assessments. The book was written with the problems faced by public managers, policy makers, students and researchers working on urban and transportation planning in mind. Hence, the book is essentially practical. All the material in the book is presented with reproducible examples using open data sets and the R programming language.</p>
+<p>Link: <a href="https://ipeagit.github.io/intro_access_book/">https://ipeagit.github.io/intro_access_book/</a></p>
+</section>
+<section id="predictive-soil-mapping-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="predictive-soil-mapping-with-r">Predictive Soil Mapping with R</h2>
+<ul>
+<li><a href="https://opengeohub.org/people/tom-hengl">Tom Heng</a></li>
+<li><a href="https://opengeohub.org/people/bob-macmillan">Robert A. MacMillan</a></li>
+</ul>
+<p>Predictive Soil Mapping (PSM) with R explains how to import, process and analyze soil data in R using the state-of-the-art soil and Machine Learning packages with ultimate objective to produce most objective spatial predictions of soil numeric and factor-type variables. Especial focus has been put on using R in combination with the Open Source GIS such as GDAL, SAGA GIS and similar, and on using Machine Learning packages ranger, xgboost, SuperLearner and similar. This book is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License. Contributions of new chapters are welcome.</p>
+<p>Link: <a href="https://soilmapper.org">https://soilmapper.org</a></p>
+</section>
+<section id="r-for-geographic-data-science" class="level2">
+<h2 class="anchored" data-anchor-id="r-for-geographic-data-science">R for Geographic Data Science</h2>
+<ul>
+<li><a href="https://twitter.com/maps4thought">Stefano De Sabbata</a></li>
+</ul>
+<p>The materials aim to cover the necessary skills in basic programming, data wrangling and reproducible research to tackle sophisticated but non-spatial data analyses. The first part of the module will focus on core programming techniques, data wrangling and practices for reproducible research. The second part of the module will focus on non-spatial data analysis approaches, including statistical analysis and machine learning.</p>
+<p>Link: <a href="https://sdesabbata.github.io/r-for-geographic-data-science/index.html">https://sdesabbata.github.io/r-for-geographic-data-science/index.html</a></p>
+</section>
+<section id="spatial-data-science-with-applications-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data-science-with-applications-in-r">Spatial Data Science With applications in R</h2>
+<ul>
+<li>Edzer Pebesma</li>
+<li>Roger Bivand</li>
+</ul>
+<p>This book introduces and explains the concepts underlying spatial data: points, lines, polygons, rasters, coverages, geometry attributes, data cubes, reference systems, as well as higher-level concepts including how attributes relate to geometries and how this affects analysis.</p>
+<p>Link: <a href="https://r-spatial.org/book/">https://r-spatial.org/book/</a></p>
+</section>
+<section id="spatial-data-science-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-data-science-with-r">Spatial Data Science with R</h2>
+<ul>
+<li><a href="https://github.com/rspatial">RSpatial</a></li>
+</ul>
+<p>This website provides materials to learn about spatial data analysis and modeling with R. R is a widely used programming language and software environment for data science. R has advanced capabilities for managing spatial data; and it provides unparalleled opportunities for analyzing such data.</p>
+<p>Link: <a href="https://rspatial.org/raster/index.html#">https://rspatial.org/raster/index.html#</a></p>
+</section>
+<section id="spatial-microsimulation-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-microsimulation-with-r">Spatial Microsimulation with R</h2>
+<ul>
+<li><a href="https://www.robinlovelace.net/">Robin Lovelace</a></li>
+<li><a href="https://directory.unamur.be/staff/modumont">Morgane Dumont</a></li>
+</ul>
+<p>Imagine a world in which data on companies, households and governments were widely available. Imagine, further, that researchers and decision-makers acting in the public interest had tools enabling them to test and model such data to explore different scenarios of the future. People would be able to make more informed decisions, based on the best available evidence. In this technocratic dreamland pressing problems such as climate change, inequality and poor human health could be solved.</p>
+<p>These are the types of real-world issues that we hope the methods in this book will help to address. Spatial microsimulation can provide new insights into complex problems and, ultimately, lead to better decision-making. By shedding new light on existing information, the methods can help shift decision-making processes away from ideological bias and towards evidence-based policy.</p>
+<p>Link: <a href="https://spatial-microsim-book.robinlovelace.net/index.html">https://spatial-microsim-book.robinlovelace.net/index.html</a></p>
+</section>
+<section id="spatial-modelling-for-data-scientists" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-modelling-for-data-scientists">Spatial Modelling for Data Scientists</h2>
+<ul>
+<li>Francisco Rowe</li>
+<li>Dani Arribas-Bel</li>
+</ul>
+<p>This is the website for “Spatial Modeling for Data Scientists”. This is a course taught by Dr.&nbsp;Francisco Rowe and Dr.&nbsp;Dani Arribas-Bel in the Second Semester of 2020/21 at the University of Liverpool, United Kingdom. You will learn how to analyse and model different types of spatial data as well as gaining an understanding of the various challenges arising from manipulating such data.</p>
+<p>Link: <a href="https://gdsl-ul.github.io/san/">https://gdsl-ul.github.io/san/</a></p>
+</section>
+<section id="spatial-statistics-for-data-science-theory-and-practice-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-statistics-for-data-science-theory-and-practice-with-r">Spatial Statistics for Data Science: Theory and Practice with R</h2>
+<ul>
+<li>Paula Moraga</li>
+</ul>
+<p>The book combines theory and practice using real-world data science examples such as disease risk mapping, air pollution prediction, species distribution modeling, crime mapping, and real state analyses.</p>
+<p>Link: <a href="https://www.paulamoraga.com/book-spatial/index.html">https://www.paulamoraga.com/book-spatial/index.html</a></p>
+</section>
+<section id="spatial-sampling-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="spatial-sampling-with-r">Spatial sampling with R</h2>
+<ul>
+<li>Dick J. Brus</li>
+</ul>
+<p>This book describes and illustrates classical, basic sampling designs for a spatial survey, as well as more recently developed, advanced sampling designs and estimators. Part I of the book is about random sampling designs for estimating a mean, total, or proportion of a population or of several subpopulations. Part II focuses on sampling designs for mapping.</p>
+<p>Link: <a href="https://dickbrus.github.io/SpatialSamplingwithR/">https://dickbrus.github.io/SpatialSamplingwithR/</a></p>
+</section>
+<section id="using-r-for-digital-soil-mapping" class="level2">
+<h2 class="anchored" data-anchor-id="using-r-for-digital-soil-mapping">Using R for Digital Soil Mapping</h2>
+<ul>
+<li>Malone, Brendan P.</li>
+<li>Minasny, Budiman</li>
+<li>McBratney, Alex B</li>
+</ul>
+<p>Describes in detail, with ample exercises, how digital soil mapping is done This work includes a number of work-flows that direct users how to create digital soil maps for their own projects This work includes tutorials for users to learn the fundamentals of R, but with a focus on how to use it for digital soil mapping</p>
+<p>Link: <a href="https://www.springer.com/gp/book/9783319443256">https://www.springer.com/gp/book/9783319443256</a></p>
+</section>
+<section id="sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" class="level2">
+<h2 class="anchored" data-anchor-id="sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series">sits: Data Analysis and Machine Learning on Earth Observation Data Cubes with Satellite Image Time Series</h2>
+<ul>
+<li>Gilberto Camara</li>
+<li>Rolf Simoes</li>
+<li>Felipe Souza</li>
+<li>Alber Sanchez</li>
+<li>Lorena Santos</li>
+<li>et al</li>
+</ul>
+<p>Using time series derived from big Earth Observation data sets is one of the leading research trends in Land Use Science and Remote Sensing. One of the more promising uses of satellite time series is its application to classify land use and land cover. Information on land is critical for sustainable development because our growing demand for natural resources is causing significant environmental impacts. The target audience for sits is the new generation of specialists who understand the principles of remote sensing and can write scripts in R. Ideally, users should have basic knowledge of data science methods using R.</p>
+<p>This book presents sits, an open-source R package for land use and land cover classification using big Earth observation data.</p>
+<p>Link: <a href="https://e-sensing.github.io/sitsbook/">https://e-sensing.github.io/sitsbook/</a></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+&nbsp;
+<hr>
+<p style="text-align: center;">Created and maintained by <a href="https://oscarbaruffa.com/" target="_blank">Oscar Baruffa</a>. <br>
+
+Keen to support the site? You're most welcome to <a href="https://ko-fi.com/I2I1K189U" target="_blank"><img height="36" style="border:0px;height:36px;" src="https://storage.ko-fi.com/cdn/kofi3.png?v=3" border="0" alt="Buy Me a Coffee at ko-fi.com"></a> </p>
+
+
+
+<p style="text-align: center;">For updates, sign up to my <a href="https://oscarbaruffa.com/newsletter?utm_source=BigBookofR_footer&amp;utm_content=Link" target="_blank">newsletter</a></p>
+
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Add font awesome icons -->
+<p style="text-align: center;">
+    <a href="https://twitter.com/OscarBaruffa" class="fa fa-twitter" target="_blank"></a>
+    <a href="https://github.com/oscarbaruffa" class="fa fa-github" target="_blank"></a>
+</p>
+
+&nbsp;
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
