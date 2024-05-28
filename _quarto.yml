@@ -5,85 +5,80 @@ book:
   title: "Big Book of R"
   author: "Oscar Baruffa"
   date: "`r format(Sys.time(), '%d %B, %Y')`"
+  image: cover.png
+
+  cover-image: cover.png
+  sidebar:
+    search: true
+    style: floating
+    collapse-level: 1
+    border: true
+  
+  page-footer: 
+    border: false
+    background: light
+    left: | 
+      Big Book of R - Oscar Baruffa
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+
 
   chapters:
     - index.qmd
     - 010-start_here.qmd
     - 015-book_clubs.qmd
     - chapters/Career and Community.qmd
-    - chapters/API.qmd
-    - chapters/Archeology.qmd
-    - chapters/Art.qmd
-    - chapters/Big Data.qmd
-    - chapters/Blogdown.qmd
-    - chapters/Bookdown.qmd
-    - chapters/Data Science.qmd
-    - chapters/Data Visualization.qmd
-    - chapters/Data Databases and Engineering.qmd
-    - chapters/Economics.qmd
-    - chapters/Español.qmd
-    - chapters/Field Specific.qmd
-    - chapters/Finance.qmd
-    - chapters/Geospatial.qmd
-    - chapters/Getting Cleaning and Wrangling Data.qmd
-    - chapters/Journalism.qmd
-    - chapters/Life Sciences.qmd
-    - chapters/Machine Learning.qmd
-    - chapters/Network Analysis.qmd
-    - chapters/Packages.qmd
-    - chapters/People Analytics.qmd
-    - chapters/Psychology.qmd
-    - chapters/R Package Development.qmd
-    - chapters/R Programming.qmd
-    - chapters/Reports.qmd
-    - chapters/Shiny.qmd
-    - chapters/Social Science.qmd
-    - chapters/Sport Analytics.qmd
-    - chapters/Statistics.qmd
-    - chapters/Teaching.qmd
-    - chapters/Text Analysis.qmd
-    - chapters/Time Series Analysis and Forecasting.qmd
-    - chapters/Version Control.qmd
-    - chapters/Workflow.qmd
-    - chapters/Other Compendiums.qmd
+    - part: "Books"
+      chapters:
+        - chapters/API.qmd
+        - chapters/Archeology.qmd
+        - chapters/Art.qmd
+        - chapters/Big Data.qmd
+        - chapters/Blogdown.qmd
+        - chapters/Bookdown.qmd
+        - chapters/Data Science.qmd
+        - chapters/Data Visualization.qmd
+        - chapters/Data Databases and Engineering.qmd
+        - chapters/Economics.qmd
+        - chapters/Español.qmd
+        - chapters/Field Specific.qmd
+        - chapters/Finance.qmd
+        - chapters/Geospatial.qmd
+        - chapters/Getting Cleaning and Wrangling Data.qmd
+        - chapters/Journalism.qmd
+        - chapters/Life Sciences.qmd
+        - chapters/Machine Learning.qmd
+        - chapters/Network Analysis.qmd
+        - chapters/Packages.qmd
+        - chapters/People Analytics.qmd
+        - chapters/Psychology.qmd
+        - chapters/R Package Development.qmd
+        - chapters/R Programming.qmd
+        - chapters/Reports.qmd
+        - chapters/Shiny.qmd
+        - chapters/Social Science.qmd
+        - chapters/Sport Analytics.qmd
+        - chapters/Statistics.qmd
+        - chapters/Teaching.qmd
+        - chapters/Text Analysis.qmd
+        - chapters/Time Series Analysis and Forecasting.qmd
+        - chapters/Version Control.qmd
+        - chapters/Workflow.qmd
+        - chapters/Other Compendiums.qmd
 
 format:
   html:
-    theme: cosmo
+    toc: true
+    toc-depth: 5
+    theme:
+      light:
+        - flatly
+        - bigbook.scss
+        # - custom.scss
+      dark:
+        - darkly
     include-in-header:
       - plausible-analytics.html
       - social.html
-      - text: |
-          <style>
-          #quarto-sidebar .menu-text {
-            display: flex;
-          }
-          #quarto-sidebar .chapter-number {
-            display: block;
-            width: 1em;
-            text-align: right;
-          }
-          #quarto-sidebar .chapter-title {
-            display: block;
-            padding-left: 10px;
-            text-indent: -10px;
-            width: 100%;
-          }
-          #quarto-toc {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 200px; /* Adjust width as needed */
-            height: 100%;
-            overflow: auto;
-          }
-          #quarto-main {
-            margin-left: 210px; /* Adjust so content does not overlap with TOC */
-          }
-          /* CSS to hide the search widget */
-          .quarto-search, .search-input {
-            display: none;
-          }
-          </style>
     include-after-body: footer.html
     edit: https://github.com/oscarbaruffa/BigBookofR/edit/main/%s
