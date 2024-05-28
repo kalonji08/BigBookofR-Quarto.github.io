@@ -1,6 +1,5 @@
 project:
-  type: website
-  output-dir: docs
+  type: book
 
 book:
   title: "Big Book of R"
