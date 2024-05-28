@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>time-series-analysis-and-forecasting</title>
+<title>Big Book of R - 36&nbsp; Time Series Analysis and Forecasting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,11 +24,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/Version Control.html" rel="next">
+<link href="../chapters/Text Analysis.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,16 +71,16 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script async="" defer="" data-domain="bigbookofr.com" src="https://plausible.io/js/plausible.outbound-links.js"></script>
-</head><body><a rel="me" href="https://fosstodon.org/@OscarBaruffa"></a>
+</head><body class="nav-sidebar floating"><a rel="me" href="https://fosstodon.org/@OscarBaruffa"></a>
 
 
-<meta property="og:title" content="">
+<meta property="og:title" content="Big Book of R - 36&nbsp; Time Series Analysis and Forecasting">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://www.bigbookofr.com/images/big_book_social.png">
 <meta property="og:url" content="https://www.bigbookofr.com/">
 <meta property="og:site_name" content="Big Book of R">
 
-<meta name="twitter:title" content="">
+<meta name="twitter:title" content="Big Book of R - 36&nbsp; Time Series Analysis and Forecasting">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="400+ Free R programming books">
 <meta name="twitter:site" content="@oscarbaruffa">
@@ -91,38 +94,329 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/API.html">Books</a></li><li class="breadcrumb-item"><a href="../chapters/Time Series Analysis and Forecasting.html"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Time Series Analysis and Forecasting</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Big Book of R</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome :)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../010-start_here.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">New to R? Start here</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../015-book_clubs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Book Clubs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Career and Community.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Career and Community</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Books</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/API.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">API</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Archeology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Archeology</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Art.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Art</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Big Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Blogdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Blogdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Bookdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bookdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Data Science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Data Visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Data Databases and Engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data, Databases and Engineering</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Economics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Economics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Español.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Español</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Field Specific.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Field Specific</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Finance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Finance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Geospatial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Geospatial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Getting Cleaning and Wrangling Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Getting, Cleaning and Wrangling Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Life Sciences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Life Sciences</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Machine Learning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Network Analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/People Analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">People Analytics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Psychology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Psychology</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/R Package Development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">R Package Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/R Programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">R Programming</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Shiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Shiny</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Social Science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Social Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Sport Analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Sport Analytics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Teaching</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Text Analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Text Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Time Series Analysis and Forecasting.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Time Series Analysis and Forecasting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Version Control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Version Control</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Other Compendiums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Other Compendiums</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#time-series-analysis-and-forecasting" id="toc-time-series-analysis-and-forecasting" class="nav-link active" data-scroll-target="#time-series-analysis-and-forecasting">Time Series Analysis and Forecasting</a>
-  <ul>
-  <li><a href="#applied-time-series-analysis-for-fisheries-and-environmental-sciences" id="toc-applied-time-series-analysis-for-fisheries-and-environmental-sciences" class="nav-link" data-scroll-target="#applied-time-series-analysis-for-fisheries-and-environmental-sciences">Applied Time Series Analysis for Fisheries and Environmental Sciences</a></li>
-  <li><a href="#fisheries-catch-forecasting" id="toc-fisheries-catch-forecasting" class="nav-link" data-scroll-target="#fisheries-catch-forecasting">Fisheries Catch Forecasting</a></li>
-  <li><a href="#forecasting-principles-and-practice" id="toc-forecasting-principles-and-practice" class="nav-link" data-scroll-target="#forecasting-principles-and-practice">Forecasting Principles and Practice</a></li>
-  <li><a href="#hands-on-time-series-analysis-with-r" id="toc-hands-on-time-series-analysis-with-r" class="nav-link" data-scroll-target="#hands-on-time-series-analysis-with-r">Hands-On Time Series Analysis with R</a></li>
-  <li><a href="#practical-time-series-forecasting-with-r-a-hands-on-guide" id="toc-practical-time-series-forecasting-with-r-a-hands-on-guide" class="nav-link" data-scroll-target="#practical-time-series-forecasting-with-r-a-hands-on-guide">Practical Time Series Forecasting with R A Hands-On Guide</a></li>
-  <li><a href="#time-series---a-data-analysis-approach-using-r" id="toc-time-series---a-data-analysis-approach-using-r" class="nav-link" data-scroll-target="#time-series---a-data-analysis-approach-using-r">Time Series - A Data Analysis Approach Using R</a></li>
-  <li><a href="#time-series-analysis-and-its-applications" id="toc-time-series-analysis-and-its-applications" class="nav-link" data-scroll-target="#time-series-analysis-and-its-applications">Time Series Analysis and Its Applications</a></li>
-  </ul></li>
+  <li><a href="#applied-time-series-analysis-for-fisheries-and-environmental-sciences" id="toc-applied-time-series-analysis-for-fisheries-and-environmental-sciences" class="nav-link active" data-scroll-target="#applied-time-series-analysis-for-fisheries-and-environmental-sciences"><span class="header-section-number">36.1</span> Applied Time Series Analysis for Fisheries and Environmental Sciences</a></li>
+  <li><a href="#fisheries-catch-forecasting" id="toc-fisheries-catch-forecasting" class="nav-link" data-scroll-target="#fisheries-catch-forecasting"><span class="header-section-number">36.2</span> Fisheries Catch Forecasting</a></li>
+  <li><a href="#forecasting-principles-and-practice" id="toc-forecasting-principles-and-practice" class="nav-link" data-scroll-target="#forecasting-principles-and-practice"><span class="header-section-number">36.3</span> Forecasting Principles and Practice</a></li>
+  <li><a href="#hands-on-time-series-analysis-with-r" id="toc-hands-on-time-series-analysis-with-r" class="nav-link" data-scroll-target="#hands-on-time-series-analysis-with-r"><span class="header-section-number">36.4</span> Hands-On Time Series Analysis with R</a></li>
+  <li><a href="#practical-time-series-forecasting-with-r-a-hands-on-guide" id="toc-practical-time-series-forecasting-with-r-a-hands-on-guide" class="nav-link" data-scroll-target="#practical-time-series-forecasting-with-r-a-hands-on-guide"><span class="header-section-number">36.5</span> Practical Time Series Forecasting with R A Hands-On Guide</a></li>
+  <li><a href="#time-series---a-data-analysis-approach-using-r" id="toc-time-series---a-data-analysis-approach-using-r" class="nav-link" data-scroll-target="#time-series---a-data-analysis-approach-using-r"><span class="header-section-number">36.6</span> Time Series - A Data Analysis Approach Using R</a></li>
+  <li><a href="#time-series-analysis-and-its-applications" id="toc-time-series-analysis-and-its-applications" class="nav-link" data-scroll-target="#time-series-analysis-and-its-applications"><span class="header-section-number">36.7</span> Time Series Analysis and Its Applications</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/API.html">Books</a></li><li class="breadcrumb-item"><a href="../chapters/Time Series Analysis and Forecasting.html"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Time Series Analysis and Forecasting</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Time Series Analysis and Forecasting</span></h1>
+</div>
 
 
 
-<section id="time-series-analysis-and-forecasting" class="level1">
-<h1>Time Series Analysis and Forecasting</h1>
-<section id="applied-time-series-analysis-for-fisheries-and-environmental-sciences" class="level2">
-<h2 class="anchored" data-anchor-id="applied-time-series-analysis-for-fisheries-and-environmental-sciences">Applied Time Series Analysis for Fisheries and Environmental Sciences</h2>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="applied-time-series-analysis-for-fisheries-and-environmental-sciences" class="level2" data-number="36.1">
+<h2 data-number="36.1" class="anchored" data-anchor-id="applied-time-series-analysis-for-fisheries-and-environmental-sciences"><span class="header-section-number">36.1</span> Applied Time Series Analysis for Fisheries and Environmental Sciences</h2>
 <ul>
 <li>E. E. Holmes</li>
 <li>M. D. Scheuerell</li>
@@ -131,16 +425,16 @@ ul.task-list li input[type="checkbox"] {
 <p>This is material that was developed as part of a course we teach at the University of Washington on applied time series analysis for fisheries and environmental data.</p>
 <p>Link: <a href="https://atsa-es.github.io/atsa-labs/">https://atsa-es.github.io/atsa-labs/</a></p>
 </section>
-<section id="fisheries-catch-forecasting" class="level2">
-<h2 class="anchored" data-anchor-id="fisheries-catch-forecasting">Fisheries Catch Forecasting</h2>
+<section id="fisheries-catch-forecasting" class="level2" data-number="36.2">
+<h2 data-number="36.2" class="anchored" data-anchor-id="fisheries-catch-forecasting"><span class="header-section-number">36.2</span> Fisheries Catch Forecasting</h2>
 <ul>
 <li>Elizabeth Holmes</li>
 </ul>
 <p>The focus of this book is on analysis of univariate time series. However multivariate regression with autocorrelated errors and multivariate autoregressive models (MAR) will be covered more briefly. For an indepth discussion of multivariate autoregressive models and multivariate autoregressive state-space models, see Holmes, Ward and Scheuerell (2018).</p>
 <p>Link: <a href="https://fish-forecast.github.io/Fish-Forecast-Bookdown/index.html">https://fish-forecast.github.io/Fish-Forecast-Bookdown/index.html</a></p>
 </section>
-<section id="forecasting-principles-and-practice" class="level2">
-<h2 class="anchored" data-anchor-id="forecasting-principles-and-practice">Forecasting Principles and Practice</h2>
+<section id="forecasting-principles-and-practice" class="level2" data-number="36.3">
+<h2 data-number="36.3" class="anchored" data-anchor-id="forecasting-principles-and-practice"><span class="header-section-number">36.3</span> Forecasting Principles and Practice</h2>
 <ul>
 <li>Rob J Hyndman</li>
 <li>George Athanasopoulos</li>
@@ -151,8 +445,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Third edition supporting the <a href="https://fable.tidyverts.org/">fable</a> package: <a href="https://otexts.com/fpp3/" class="uri">https://otexts.com/fpp3/</a></p>
 <p>Link: <a href="https://otexts.com/fpp3/">https://otexts.com/fpp3/</a></p>
 </section>
-<section id="hands-on-time-series-analysis-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="hands-on-time-series-analysis-with-r">Hands-On Time Series Analysis with R</h2>
+<section id="hands-on-time-series-analysis-with-r" class="level2" data-number="36.4">
+<h2 data-number="36.4" class="anchored" data-anchor-id="hands-on-time-series-analysis-with-r"><span class="header-section-number">36.4</span> Hands-On Time Series Analysis with R</h2>
 <ul>
 <li>Rami Krispin</li>
 </ul>
@@ -160,8 +454,8 @@ ul.task-list li input[type="checkbox"] {
 <p>This book is designed for data scientists who wish to learn time series analysis and forecasting or data analysts who use Excel-based forecasting methods and wish to use more robust methods.</p>
 <p>Link: <a href="https://www.packtpub.com/product/hands-on-time-series-analysis-with-r/9781788629157">https://www.packtpub.com/product/hands-on-time-series-analysis-with-r/9781788629157</a></p>
 </section>
-<section id="practical-time-series-forecasting-with-r-a-hands-on-guide" class="level2">
-<h2 class="anchored" data-anchor-id="practical-time-series-forecasting-with-r-a-hands-on-guide">Practical Time Series Forecasting with R A Hands-On Guide</h2>
+<section id="practical-time-series-forecasting-with-r-a-hands-on-guide" class="level2" data-number="36.5">
+<h2 data-number="36.5" class="anchored" data-anchor-id="practical-time-series-forecasting-with-r-a-hands-on-guide"><span class="header-section-number">36.5</span> Practical Time Series Forecasting with R A Hands-On Guide</h2>
 <ul>
 <li>Galit Shmueli</li>
 <li>Kenneth C. Lichtendahl, Jr</li>
@@ -170,8 +464,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Balancing theory and practice, the books introduce popular forecasting methods and approaches used in a variety of business applications, and are ideal for Business Analytics, MBA, Executive MBA, and Data Analytics programs in business schools.</p>
 <p>Link: <a href="http://www.forecastingbook.com/">http://www.forecastingbook.com/</a></p>
 </section>
-<section id="time-series---a-data-analysis-approach-using-r" class="level2">
-<h2 class="anchored" data-anchor-id="time-series---a-data-analysis-approach-using-r">Time Series - A Data Analysis Approach Using R</h2>
+<section id="time-series---a-data-analysis-approach-using-r" class="level2" data-number="36.6">
+<h2 data-number="36.6" class="anchored" data-anchor-id="time-series---a-data-analysis-approach-using-r"><span class="header-section-number">36.6</span> Time Series - A Data Analysis Approach Using R</h2>
 <ul>
 <li>Robert H. Shumway</li>
 <li>David S. Stoffer</li>
@@ -179,8 +473,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The goals of this text are to develop the skills and an appreciation for the richness and versatility of modern time series analysis as a tool for analyzing dependent data. A useful feature of the presentation is the inclusion of nontrivial data sets illustrating the richness of potential applications to problems in the biological, physical, and social sciences as well as medicine. The text presents a balanced and comprehensive treatment of both time and frequency domain methods with an emphasis on data analysis.</p>
 <p>Link: <a href="https://www.routledge.com/Time-Series-A-Data-Analysis-Approach-Using-R/Shumway-Stoffer/p/book/9780367221096">https://www.routledge.com/Time-Series-A-Data-Analysis-Approach-Using-R/Shumway-Stoffer/p/book/9780367221096</a></p>
 </section>
-<section id="time-series-analysis-and-its-applications" class="level2">
-<h2 class="anchored" data-anchor-id="time-series-analysis-and-its-applications">Time Series Analysis and Its Applications</h2>
+<section id="time-series-analysis-and-its-applications" class="level2" data-number="36.7">
+<h2 data-number="36.7" class="anchored" data-anchor-id="time-series-analysis-and-its-applications"><span class="header-section-number">36.7</span> Time Series Analysis and Its Applications</h2>
 <ul>
 <li>Robert H. Shumway</li>
 <li>David S. Stoffer</li>
@@ -189,7 +483,6 @@ ul.task-list li input[type="checkbox"] {
 <p>Link: <a href="https://www.stat.pitt.edu/stoffer/tsa4/index.html">https://www.stat.pitt.edu/stoffer/tsa4/index.html</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -439,7 +732,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/kalonji08\.github\.io\/BigBookofR-Quarto\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -767,7 +1060,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/Text Analysis.html" class="pagination-link" aria-label="Text Analysis">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Text Analysis</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/Version Control.html" class="pagination-link" aria-label="Version Control">
+        <span class="nav-page-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Version Control</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Big Book of R - Oscar Baruffa</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 

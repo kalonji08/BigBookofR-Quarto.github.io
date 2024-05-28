@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>machine-learning</title>
+<title>Big Book of R - 22&nbsp; Machine Learning</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,11 +24,14 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../chapters/Network Analysis.html" rel="next">
+<link href="../chapters/Life Sciences.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,16 +71,16 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script async="" defer="" data-domain="bigbookofr.com" src="https://plausible.io/js/plausible.outbound-links.js"></script>
-</head><body><a rel="me" href="https://fosstodon.org/@OscarBaruffa"></a>
+</head><body class="nav-sidebar floating"><a rel="me" href="https://fosstodon.org/@OscarBaruffa"></a>
 
 
-<meta property="og:title" content="">
+<meta property="og:title" content="Big Book of R - 22&nbsp; Machine Learning">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://www.bigbookofr.com/images/big_book_social.png">
 <meta property="og:url" content="https://www.bigbookofr.com/">
 <meta property="og:site_name" content="Big Book of R">
 
-<meta name="twitter:title" content="">
+<meta name="twitter:title" content="Big Book of R - 22&nbsp; Machine Learning">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="400+ Free R programming books">
 <meta name="twitter:site" content="@oscarbaruffa">
@@ -91,61 +94,352 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/API.html">Books</a></li><li class="breadcrumb-item"><a href="../chapters/Machine Learning.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Machine Learning</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Big Book of R</a> 
+        <div class="sidebar-tools-main">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome :)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../010-start_here.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">New to R? Start here</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../015-book_clubs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Book Clubs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Career and Community.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Career and Community</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Books</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/API.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">API</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Archeology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Archeology</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Art.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Art</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Big Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Blogdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Blogdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Bookdown.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bookdown</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Data Science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Data Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Data Visualization.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Data Databases and Engineering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data, Databases and Engineering</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Economics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Economics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Español.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Español</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Field Specific.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Field Specific</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Finance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Finance</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Geospatial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Geospatial</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Getting Cleaning and Wrangling Data.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Getting, Cleaning and Wrangling Data</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Journalism.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Life Sciences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Life Sciences</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Machine Learning.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Network Analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Packages.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Packages</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/People Analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">People Analytics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Psychology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Psychology</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/R Package Development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">R Package Development</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/R Programming.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">R Programming</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Reports.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Shiny.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Shiny</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Social Science.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Social Science</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Sport Analytics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Sport Analytics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Statistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Statistics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Teaching.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Teaching</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Text Analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Text Analysis</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Time Series Analysis and Forecasting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Time Series Analysis and Forecasting</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Version Control.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Version Control</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Workflow.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Workflow</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../chapters/Other Compendiums.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Other Compendiums</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#machine-learning" id="toc-machine-learning" class="nav-link active" data-scroll-target="#machine-learning">Machine Learning</a>
-  <ul>
-  <li><a href="#a-minimal-rtorch-book" id="toc-a-minimal-rtorch-book" class="nav-link" data-scroll-target="#a-minimal-rtorch-book">A Minimal rTorch Book</a></li>
-  <li><a href="#applied-machine-learning-for-tabular-data" id="toc-applied-machine-learning-for-tabular-data" class="nav-link" data-scroll-target="#applied-machine-learning-for-tabular-data">Applied Machine Learning for Tabular Data</a></li>
-  <li><a href="#behavior-analysis-with-machine-learning-using-r" id="toc-behavior-analysis-with-machine-learning-using-r" class="nav-link" data-scroll-target="#behavior-analysis-with-machine-learning-using-r">Behavior Analysis with Machine Learning Using R</a></li>
-  <li><a href="#data-science-theories-models-algorithms-and-analytics" id="toc-data-science-theories-models-algorithms-and-analytics" class="nav-link" data-scroll-target="#data-science-theories-models-algorithms-and-analytics">Data Science: Theories, Models, Algorithms, and Analytics</a></li>
-  <li><a href="#deep-learning-and-scientific-computing-with-r-torch" id="toc-deep-learning-and-scientific-computing-with-r-torch" class="nav-link" data-scroll-target="#deep-learning-and-scientific-computing-with-r-torch">Deep Learning and Scientific Computing with R torch</a></li>
-  <li><a href="#explanatory-model-analysis" id="toc-explanatory-model-analysis" class="nav-link" data-scroll-target="#explanatory-model-analysis">Explanatory Model Analysis</a></li>
-  <li><a href="#feature-engineering-a-z" id="toc-feature-engineering-a-z" class="nav-link" data-scroll-target="#feature-engineering-a-z">Feature Engineering A-Z</a></li>
-  <li><a href="#feature-engineering-and-selection-a-practical-approach-for-predictive-models" id="toc-feature-engineering-and-selection-a-practical-approach-for-predictive-models" class="nav-link" data-scroll-target="#feature-engineering-and-selection-a-practical-approach-for-predictive-models">Feature Engineering and Selection A Practical Approach for Predictive Models</a></li>
-  <li><a href="#hands-on-machine-learning-with-r" id="toc-hands-on-machine-learning-with-r" class="nav-link" data-scroll-target="#hands-on-machine-learning-with-r">Hands-On Machine Learning with R</a></li>
-  <li><a href="#interpretable-machine-learning" id="toc-interpretable-machine-learning" class="nav-link" data-scroll-target="#interpretable-machine-learning">Interpretable Machine Learning</a></li>
-  <li><a href="#lightweight-machine-learning-classics-with-r-marek-gagolewski" id="toc-lightweight-machine-learning-classics-with-r-marek-gagolewski" class="nav-link" data-scroll-target="#lightweight-machine-learning-classics-with-r-marek-gagolewski">Lightweight Machine Learning Classics with R Marek Gagolewski</a></li>
-  <li><a href="#machine-learning-for-factor-investing" id="toc-machine-learning-for-factor-investing" class="nav-link" data-scroll-target="#machine-learning-for-factor-investing">Machine Learning for Factor Investing</a></li>
-  <li><a href="#mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle" id="toc-mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle" class="nav-link" data-scroll-target="#mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle">Mathematics and Programming for Machine Learning with R From the Ground Up 1st Edition, Kindle</a></li>
-  <li><a href="#neural-cryptography-using-keras-in-r" id="toc-neural-cryptography-using-keras-in-r" class="nav-link" data-scroll-target="#neural-cryptography-using-keras-in-r">Neural Cryptography Using Keras in R</a></li>
-  <li><a href="#neural-networks-with-keras-in-r-a-quickstart-guide" id="toc-neural-networks-with-keras-in-r-a-quickstart-guide" class="nav-link" data-scroll-target="#neural-networks-with-keras-in-r-a-quickstart-guide">Neural Networks with Keras in R: A QuickStart Guide</a></li>
-  <li><a href="#supervised-machine-learning-for-text-analysis-in-r" id="toc-supervised-machine-learning-for-text-analysis-in-r" class="nav-link" data-scroll-target="#supervised-machine-learning-for-text-analysis-in-r">Supervised Machine Learning for Text Analysis in R</a></li>
-  <li><a href="#surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences" id="toc-surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences" class="nav-link" data-scroll-target="#surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences">Surrogates - Gaussian process modeling, design and optimization for the applied sciences</a></li>
-  <li><a href="#the-hitchhikers-guide-to-responsible-machine-learning" id="toc-the-hitchhikers-guide-to-responsible-machine-learning" class="nav-link" data-scroll-target="#the-hitchhikers-guide-to-responsible-machine-learning">The Hitchhiker’s Guide to Responsible Machine Learning</a></li>
-  <li><a href="#the-caret-package" id="toc-the-caret-package" class="nav-link" data-scroll-target="#the-caret-package">The caret Package</a></li>
-  <li><a href="#tidy-modeling-with-r" id="toc-tidy-modeling-with-r" class="nav-link" data-scroll-target="#tidy-modeling-with-r">Tidy Modeling with R</a></li>
-  <li><a href="#mlr3-book" id="toc-mlr3-book" class="nav-link" data-scroll-target="#mlr3-book">mlr3 book</a></li>
-  <li><a href="#sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" id="toc-sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" class="nav-link" data-scroll-target="#sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series">sits: Data Analysis and Machine Learning on Earth Observation Data Cubes with Satellite Image Time Series</a></li>
-  </ul></li>
+  <li><a href="#a-minimal-rtorch-book" id="toc-a-minimal-rtorch-book" class="nav-link active" data-scroll-target="#a-minimal-rtorch-book"><span class="header-section-number">22.1</span> A Minimal rTorch Book</a></li>
+  <li><a href="#applied-machine-learning-for-tabular-data" id="toc-applied-machine-learning-for-tabular-data" class="nav-link" data-scroll-target="#applied-machine-learning-for-tabular-data"><span class="header-section-number">22.2</span> Applied Machine Learning for Tabular Data</a></li>
+  <li><a href="#behavior-analysis-with-machine-learning-using-r" id="toc-behavior-analysis-with-machine-learning-using-r" class="nav-link" data-scroll-target="#behavior-analysis-with-machine-learning-using-r"><span class="header-section-number">22.3</span> Behavior Analysis with Machine Learning Using R</a></li>
+  <li><a href="#data-science-theories-models-algorithms-and-analytics" id="toc-data-science-theories-models-algorithms-and-analytics" class="nav-link" data-scroll-target="#data-science-theories-models-algorithms-and-analytics"><span class="header-section-number">22.4</span> Data Science: Theories, Models, Algorithms, and Analytics</a></li>
+  <li><a href="#deep-learning-and-scientific-computing-with-r-torch" id="toc-deep-learning-and-scientific-computing-with-r-torch" class="nav-link" data-scroll-target="#deep-learning-and-scientific-computing-with-r-torch"><span class="header-section-number">22.5</span> Deep Learning and Scientific Computing with R torch</a></li>
+  <li><a href="#explanatory-model-analysis" id="toc-explanatory-model-analysis" class="nav-link" data-scroll-target="#explanatory-model-analysis"><span class="header-section-number">22.6</span> Explanatory Model Analysis</a></li>
+  <li><a href="#feature-engineering-a-z" id="toc-feature-engineering-a-z" class="nav-link" data-scroll-target="#feature-engineering-a-z"><span class="header-section-number">22.7</span> Feature Engineering A-Z</a></li>
+  <li><a href="#feature-engineering-and-selection-a-practical-approach-for-predictive-models" id="toc-feature-engineering-and-selection-a-practical-approach-for-predictive-models" class="nav-link" data-scroll-target="#feature-engineering-and-selection-a-practical-approach-for-predictive-models"><span class="header-section-number">22.8</span> Feature Engineering and Selection A Practical Approach for Predictive Models</a></li>
+  <li><a href="#hands-on-machine-learning-with-r" id="toc-hands-on-machine-learning-with-r" class="nav-link" data-scroll-target="#hands-on-machine-learning-with-r"><span class="header-section-number">22.9</span> Hands-On Machine Learning with R</a></li>
+  <li><a href="#interpretable-machine-learning" id="toc-interpretable-machine-learning" class="nav-link" data-scroll-target="#interpretable-machine-learning"><span class="header-section-number">22.10</span> Interpretable Machine Learning</a></li>
+  <li><a href="#lightweight-machine-learning-classics-with-r-marek-gagolewski" id="toc-lightweight-machine-learning-classics-with-r-marek-gagolewski" class="nav-link" data-scroll-target="#lightweight-machine-learning-classics-with-r-marek-gagolewski"><span class="header-section-number">22.11</span> Lightweight Machine Learning Classics with R Marek Gagolewski</a></li>
+  <li><a href="#machine-learning-for-factor-investing" id="toc-machine-learning-for-factor-investing" class="nav-link" data-scroll-target="#machine-learning-for-factor-investing"><span class="header-section-number">22.12</span> Machine Learning for Factor Investing</a></li>
+  <li><a href="#mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle" id="toc-mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle" class="nav-link" data-scroll-target="#mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle"><span class="header-section-number">22.13</span> Mathematics and Programming for Machine Learning with R From the Ground Up 1st Edition, Kindle</a></li>
+  <li><a href="#neural-cryptography-using-keras-in-r" id="toc-neural-cryptography-using-keras-in-r" class="nav-link" data-scroll-target="#neural-cryptography-using-keras-in-r"><span class="header-section-number">22.14</span> Neural Cryptography Using Keras in R</a></li>
+  <li><a href="#neural-networks-with-keras-in-r-a-quickstart-guide" id="toc-neural-networks-with-keras-in-r-a-quickstart-guide" class="nav-link" data-scroll-target="#neural-networks-with-keras-in-r-a-quickstart-guide"><span class="header-section-number">22.15</span> Neural Networks with Keras in R: A QuickStart Guide</a></li>
+  <li><a href="#supervised-machine-learning-for-text-analysis-in-r" id="toc-supervised-machine-learning-for-text-analysis-in-r" class="nav-link" data-scroll-target="#supervised-machine-learning-for-text-analysis-in-r"><span class="header-section-number">22.16</span> Supervised Machine Learning for Text Analysis in R</a></li>
+  <li><a href="#surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences" id="toc-surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences" class="nav-link" data-scroll-target="#surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences"><span class="header-section-number">22.17</span> Surrogates - Gaussian process modeling, design and optimization for the applied sciences</a></li>
+  <li><a href="#the-hitchhikers-guide-to-responsible-machine-learning" id="toc-the-hitchhikers-guide-to-responsible-machine-learning" class="nav-link" data-scroll-target="#the-hitchhikers-guide-to-responsible-machine-learning"><span class="header-section-number">22.18</span> The Hitchhiker’s Guide to Responsible Machine Learning</a></li>
+  <li><a href="#the-caret-package" id="toc-the-caret-package" class="nav-link" data-scroll-target="#the-caret-package"><span class="header-section-number">22.19</span> The caret Package</a></li>
+  <li><a href="#tidy-modeling-with-r" id="toc-tidy-modeling-with-r" class="nav-link" data-scroll-target="#tidy-modeling-with-r"><span class="header-section-number">22.20</span> Tidy Modeling with R</a></li>
+  <li><a href="#mlr3-book" id="toc-mlr3-book" class="nav-link" data-scroll-target="#mlr3-book"><span class="header-section-number">22.21</span> mlr3 book</a></li>
+  <li><a href="#sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" id="toc-sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" class="nav-link" data-scroll-target="#sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series"><span class="header-section-number">22.22</span> sits: Data Analysis and Machine Learning on Earth Observation Data Cubes with Satellite Image Time Series</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/API.html">Books</a></li><li class="breadcrumb-item"><a href="../chapters/Machine Learning.html"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Machine Learning</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Machine Learning</span></h1>
+</div>
 
 
 
-<section id="machine-learning" class="level1">
-<h1>Machine Learning</h1>
-<section id="a-minimal-rtorch-book" class="level2">
-<h2 class="anchored" data-anchor-id="a-minimal-rtorch-book">A Minimal rTorch Book</h2>
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="a-minimal-rtorch-book" class="level2" data-number="22.1">
+<h2 data-number="22.1" class="anchored" data-anchor-id="a-minimal-rtorch-book"><span class="header-section-number">22.1</span> A Minimal rTorch Book</h2>
 <ul>
 <li>Alfonso R. Reyes</li>
 </ul>
 <p>Practically, you can do everything you could with PyTorch within the R ecosystem.</p>
 <p>Link: <a href="https://f0nzie.github.io/rtorch-minimal-book/">https://f0nzie.github.io/rtorch-minimal-book/</a></p>
 </section>
-<section id="applied-machine-learning-for-tabular-data" class="level2">
-<h2 class="anchored" data-anchor-id="applied-machine-learning-for-tabular-data">Applied Machine Learning for Tabular Data</h2>
+<section id="applied-machine-learning-for-tabular-data" class="level2" data-number="22.2">
+<h2 data-number="22.2" class="anchored" data-anchor-id="applied-machine-learning-for-tabular-data"><span class="header-section-number">22.2</span> Applied Machine Learning for Tabular Data</h2>
 <ul>
 <li>Max Kuhn</li>
 <li>Kjell Johnson</li>
@@ -153,32 +447,32 @@ ul.task-list li input[type="checkbox"] {
 <p>We want to create a practical guide to developing quality predictive models from tabular data. We’ll publish materials here as we create them and welcome community contributions in the form of discussions, suggestions, and edits. The book takes a holistic view of the predictive modeling process and focuses on a few areas that are usually left out of similar works. For example, the effectiveness of the model can be driven by how the predictors are represented. Because of this, we tightly couple feature engineering methods with machine learning models. Also, quite a lot of work happens after we have determined our best model and created the final fit. These post-modeling activities are an important part of the model development process and will be described in detail.</p>
 <p>Link: <a href="https://aml4td.org/">https://aml4td.org/</a></p>
 </section>
-<section id="behavior-analysis-with-machine-learning-using-r" class="level2">
-<h2 class="anchored" data-anchor-id="behavior-analysis-with-machine-learning-using-r">Behavior Analysis with Machine Learning Using R</h2>
+<section id="behavior-analysis-with-machine-learning-using-r" class="level2" data-number="22.3">
+<h2 data-number="22.3" class="anchored" data-anchor-id="behavior-analysis-with-machine-learning-using-r"><span class="header-section-number">22.3</span> Behavior Analysis with Machine Learning Using R</h2>
 <ul>
 <li>Enrique Garcia Ceja</li>
 </ul>
 <p>This book aims to provide an introduction to machine learning concepts and algorithms applied to a diverse set of behavior analysis problems. It focuses on the practical aspects of solving such problems based on data collected from sensors or stored in electronic records. The included examples demonstrate how to perform several of the tasks involved during a data analysis pipeline such as: data exploration, visualization, preprocessing, representation, model training/validation, and so on. All of this, using the R programming language and real-life datasets.</p>
 <p>Link: <a href="https://enriquegit.github.io/behavior-free/index.html#">https://enriquegit.github.io/behavior-free/index.html#</a></p>
 </section>
-<section id="data-science-theories-models-algorithms-and-analytics" class="level2">
-<h2 class="anchored" data-anchor-id="data-science-theories-models-algorithms-and-analytics">Data Science: Theories, Models, Algorithms, and Analytics</h2>
+<section id="data-science-theories-models-algorithms-and-analytics" class="level2" data-number="22.4">
+<h2 data-number="22.4" class="anchored" data-anchor-id="data-science-theories-models-algorithms-and-analytics"><span class="header-section-number">22.4</span> Data Science: Theories, Models, Algorithms, and Analytics</h2>
 <ul>
 <li>Sanjiv Ranjan Das</li>
 </ul>
 <p>I developed these class notes for my Machine Learning with R course. It traces my evolution as a data scientist into redundancy, I expect I will be replaced by a machine soon!</p>
 <p>Link: <a href="https://srdas.github.io/MLBook/">https://srdas.github.io/MLBook/</a></p>
 </section>
-<section id="deep-learning-and-scientific-computing-with-r-torch" class="level2">
-<h2 class="anchored" data-anchor-id="deep-learning-and-scientific-computing-with-r-torch">Deep Learning and Scientific Computing with R torch</h2>
+<section id="deep-learning-and-scientific-computing-with-r-torch" class="level2" data-number="22.5">
+<h2 data-number="22.5" class="anchored" data-anchor-id="deep-learning-and-scientific-computing-with-r-torch"><span class="header-section-number">22.5</span> Deep Learning and Scientific Computing with R torch</h2>
 <ul>
 <li><a href="https://divergences.xyz/">Sigrid Keydana</a></li>
 </ul>
 <p>This is a book about torch, the R interface to PyTorch. PyTorch, as of this writing, is one of the major deep-learning and scientific-computing frameworks, widely used across industries and areas of research. With torch, you get to access its rich functionality directly from R, with no need to install, let alone learn, Python.</p>
 <p>Link: <a href="https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/">https://skeydan.github.io/Deep-Learning-and-Scientific-Computing-with-R-torch/</a></p>
 </section>
-<section id="explanatory-model-analysis" class="level2">
-<h2 class="anchored" data-anchor-id="explanatory-model-analysis">Explanatory Model Analysis</h2>
+<section id="explanatory-model-analysis" class="level2" data-number="22.6">
+<h2 data-number="22.6" class="anchored" data-anchor-id="explanatory-model-analysis"><span class="header-section-number">22.6</span> Explanatory Model Analysis</h2>
 <ul>
 <li><a href="https://github.com/pbiecek">Przemyslaw Biecek</a></li>
 <li>Tomasz Burzykowski</li>
@@ -186,8 +480,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Responsible, Fair and Explainable Predictive Modeling with examples in R and Python</p>
 <p>Link: <a href="https://pbiecek.github.io/ema/">https://pbiecek.github.io/ema/</a></p>
 </section>
-<section id="feature-engineering-a-z" class="level2">
-<h2 class="anchored" data-anchor-id="feature-engineering-a-z">Feature Engineering A-Z</h2>
+<section id="feature-engineering-a-z" class="level2" data-number="22.7">
+<h2 data-number="22.7" class="anchored" data-anchor-id="feature-engineering-a-z"><span class="header-section-number">22.7</span> Feature Engineering A-Z</h2>
 <ul>
 <li>Emil Hvitfeldt</li>
 </ul>
@@ -195,8 +489,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Many educational resources skip over the finer details of feature engineering methods, which is where this book tries to fill the gap.</p>
 <p>Link: <a href="https://feaz-book.com/">https://feaz-book.com/</a></p>
 </section>
-<section id="feature-engineering-and-selection-a-practical-approach-for-predictive-models" class="level2">
-<h2 class="anchored" data-anchor-id="feature-engineering-and-selection-a-practical-approach-for-predictive-models">Feature Engineering and Selection A Practical Approach for Predictive Models</h2>
+<section id="feature-engineering-and-selection-a-practical-approach-for-predictive-models" class="level2" data-number="22.8">
+<h2 data-number="22.8" class="anchored" data-anchor-id="feature-engineering-and-selection-a-practical-approach-for-predictive-models"><span class="header-section-number">22.8</span> Feature Engineering and Selection A Practical Approach for Predictive Models</h2>
 <ul>
 <li>Max Kuhn</li>
 <li>Kjell Johnson</li>
@@ -204,8 +498,8 @@ ul.task-list li input[type="checkbox"] {
 <p>The goals of Feature Engineering and Selection are to provide tools for re-representing predictors, to place these tools in the context of a good predictive modeling framework, and to convey our experience of utilizing these tools in practice.</p>
 <p>Link: <a href="http://www.feat.engineering/index.html">http://www.feat.engineering/index.html</a></p>
 </section>
-<section id="hands-on-machine-learning-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="hands-on-machine-learning-with-r">Hands-On Machine Learning with R</h2>
+<section id="hands-on-machine-learning-with-r" class="level2" data-number="22.9">
+<h2 data-number="22.9" class="anchored" data-anchor-id="hands-on-machine-learning-with-r"><span class="header-section-number">22.9</span> Hands-On Machine Learning with R</h2>
 <ul>
 <li>Bradley Boehmke</li>
 <li>Brandon Greenwell</li>
@@ -214,8 +508,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Generalized low rank models, Clustering algorithms, Autoencoders, Regularized models, Random forests, Gradient boosting machines, Deep neural networks, Stacking / super learners and more!</p>
 <p>Link: <a href="https://bradleyboehmke.github.io/HOML/">https://bradleyboehmke.github.io/HOML/</a></p>
 </section>
-<section id="interpretable-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="interpretable-machine-learning">Interpretable Machine Learning</h2>
+<section id="interpretable-machine-learning" class="level2" data-number="22.10">
+<h2 data-number="22.10" class="anchored" data-anchor-id="interpretable-machine-learning"><span class="header-section-number">22.10</span> Interpretable Machine Learning</h2>
 <ul>
 <li><a href="https://twitter.com/ChristophMolnar">Christoph Molnar</a></li>
 </ul>
@@ -224,13 +518,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Paid: Free or pay what you want $42</p>
 <p>Link: <a href="https://leanpub.com/interpretable-machine-learning">https://leanpub.com/interpretable-machine-learning</a></p>
 </section>
-<section id="lightweight-machine-learning-classics-with-r-marek-gagolewski" class="level2">
-<h2 class="anchored" data-anchor-id="lightweight-machine-learning-classics-with-r-marek-gagolewski">Lightweight Machine Learning Classics with R Marek Gagolewski</h2>
+<section id="lightweight-machine-learning-classics-with-r-marek-gagolewski" class="level2" data-number="22.11">
+<h2 data-number="22.11" class="anchored" data-anchor-id="lightweight-machine-learning-classics-with-r-marek-gagolewski"><span class="header-section-number">22.11</span> Lightweight Machine Learning Classics with R Marek Gagolewski</h2>
 <p>In this book we will take an unpretentious glance at the most fundamental algorithms that have stood the test of time and which form the basis for state-of-the-art solutions of modern AI, which is principally (big) data-driven.</p>
 <p>Link: <a href="https://lmlcr.gagolewski.com/">https://lmlcr.gagolewski.com/</a></p>
 </section>
-<section id="machine-learning-for-factor-investing" class="level2">
-<h2 class="anchored" data-anchor-id="machine-learning-for-factor-investing">Machine Learning for Factor Investing</h2>
+<section id="machine-learning-for-factor-investing" class="level2" data-number="22.12">
+<h2 data-number="22.12" class="anchored" data-anchor-id="machine-learning-for-factor-investing"><span class="header-section-number">22.12</span> Machine Learning for Factor Investing</h2>
 <ul>
 <li><a href="https://twitter.com/g_coqueret">Guillaume Coqueret</a></li>
 <li><a href="https://twitter.com/TonyGUIDA_Quant">Tony Guida</a></li>
@@ -238,16 +532,16 @@ ul.task-list li input[type="checkbox"] {
 <p>This book is intended to cover some advanced modelling techniques applied to equity investment strategies that are built on firm characteristics.</p>
 <p>Link: <a href="http://www.mlfactor.com/">http://www.mlfactor.com/</a></p>
 </section>
-<section id="mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle" class="level2">
-<h2 class="anchored" data-anchor-id="mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle">Mathematics and Programming for Machine Learning with R From the Ground Up 1st Edition, Kindle</h2>
+<section id="mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle" class="level2" data-number="22.13">
+<h2 data-number="22.13" class="anchored" data-anchor-id="mathematics-and-programming-for-machine-learning-with-r-from-the-ground-up-1st-edition-kindle"><span class="header-section-number">22.13</span> Mathematics and Programming for Machine Learning with R From the Ground Up 1st Edition, Kindle</h2>
 <ul>
 <li><a href="https://twitter.com/BillOita?s=09">William B. Claster</a></li>
 </ul>
 <p>Based on the author’s experience in teaching data science for more than 10 years, Mathematics and Programming for Machine Learning with R: From the Ground Up reveals how machine learning algorithms do their magic and explains how these algorithms can be implemented in code. It is designed to provide readers with an understanding of the reasoning behind machine learning algorithms as well as how to program them. Written for novice programmers, the book progresses step-by-step, providing the coding skills needed to implement machine learning algorithms in R.</p>
 <p>Link: <a href="https://www.amazon.com/Mathematics-Programming-Machine-Learning-Ground-ebook-dp-B08JHDCX9Y/dp/B08JHDCX9Y">https://www.amazon.com/Mathematics-Programming-Machine-Learning-Ground-ebook-dp-B08JHDCX9Y/dp/B08JHDCX9Y</a></p>
 </section>
-<section id="neural-cryptography-using-keras-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="neural-cryptography-using-keras-in-r">Neural Cryptography Using Keras in R</h2>
+<section id="neural-cryptography-using-keras-in-r" class="level2" data-number="22.14">
+<h2 data-number="22.14" class="anchored" data-anchor-id="neural-cryptography-using-keras-in-r"><span class="header-section-number">22.14</span> Neural Cryptography Using Keras in R</h2>
 <ul>
 <li>Michael Harris</li>
 </ul>
@@ -255,8 +549,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Paid: Free and paid $15</p>
 <p>Link: <a href="https://www.statswithr.com/neural-cryptography-using-keras-in-r">https://www.statswithr.com/neural-cryptography-using-keras-in-r</a></p>
 </section>
-<section id="neural-networks-with-keras-in-r-a-quickstart-guide" class="level2">
-<h2 class="anchored" data-anchor-id="neural-networks-with-keras-in-r-a-quickstart-guide">Neural Networks with Keras in R: A QuickStart Guide</h2>
+<section id="neural-networks-with-keras-in-r-a-quickstart-guide" class="level2" data-number="22.15">
+<h2 data-number="22.15" class="anchored" data-anchor-id="neural-networks-with-keras-in-r-a-quickstart-guide"><span class="header-section-number">22.15</span> Neural Networks with Keras in R: A QuickStart Guide</h2>
 <ul>
 <li>Michael Harris</li>
 </ul>
@@ -264,8 +558,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Paid: Free and paid $15</p>
 <p>Link: <a href="https://www.statswithr.com/neural-networks-with-keras-in-r-a-quickstart-guide">https://www.statswithr.com/neural-networks-with-keras-in-r-a-quickstart-guide</a></p>
 </section>
-<section id="supervised-machine-learning-for-text-analysis-in-r" class="level2">
-<h2 class="anchored" data-anchor-id="supervised-machine-learning-for-text-analysis-in-r">Supervised Machine Learning for Text Analysis in R</h2>
+<section id="supervised-machine-learning-for-text-analysis-in-r" class="level2" data-number="22.16">
+<h2 data-number="22.16" class="anchored" data-anchor-id="supervised-machine-learning-for-text-analysis-in-r"><span class="header-section-number">22.16</span> Supervised Machine Learning for Text Analysis in R</h2>
 <ul>
 <li><a href="https://twitter.com/Emil_Hvitfeldt">Emil Hvitfeldt</a></li>
 <li><a href="https://twitter.com/juliasilge">Julia Silge</a></li>
@@ -273,16 +567,16 @@ ul.task-list li input[type="checkbox"] {
 <p>Modeling as a statistical practice can encompass a wide variety of activities. This book focuses on supervised or predictive modeling for text, using text data to make predictions about the world around us. We use the tidymodels framework for modeling, a consistent and flexible collection of R packages developed to encourage good statistical practice.</p>
 <p>Link: <a href="https://smltar.com/">https://smltar.com/</a></p>
 </section>
-<section id="surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences" class="level2">
-<h2 class="anchored" data-anchor-id="surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences">Surrogates - Gaussian process modeling, design and optimization for the applied sciences</h2>
+<section id="surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences" class="level2" data-number="22.17">
+<h2 data-number="22.17" class="anchored" data-anchor-id="surrogates---gaussian-process-modeling-design-and-optimization-for-the-applied-sciences"><span class="header-section-number">22.17</span> Surrogates - Gaussian process modeling, design and optimization for the applied sciences</h2>
 <ul>
 <li><a href="https://www.stat.vt.edu/people/stat-faculty/gramacy-robert.html">Robert B. Gramacy</a></li>
 </ul>
 <p>Surrogates is a graduate textbook, or professional handbook, on topics at the interface between machine learning, spatial statistics, computer simulation, meta-modeling (i.e., emulation), design of experiments, and optimization. Experimentation through simulation, “human out-of-the-loop” statistical support, management of dynamic processes, online and real-time analysis, automation, and practical application are at the forefront.</p>
 <p>Link: <a href="https://bookdown.org/rbg/surrogates/">https://bookdown.org/rbg/surrogates/</a></p>
 </section>
-<section id="the-hitchhikers-guide-to-responsible-machine-learning" class="level2">
-<h2 class="anchored" data-anchor-id="the-hitchhikers-guide-to-responsible-machine-learning">The Hitchhiker’s Guide to Responsible Machine Learning</h2>
+<section id="the-hitchhikers-guide-to-responsible-machine-learning" class="level2" data-number="22.18">
+<h2 data-number="22.18" class="anchored" data-anchor-id="the-hitchhikers-guide-to-responsible-machine-learning"><span class="header-section-number">22.18</span> The Hitchhiker’s Guide to Responsible Machine Learning</h2>
 <ul>
 <li>Przemyslaw Biecek</li>
 <li>Anna Kozak</li>
@@ -291,16 +585,16 @@ ul.task-list li input[type="checkbox"] {
 <p>A graphic novel approach to responsible machine learning</p>
 <p>Link: <a href="https://betaandbit.github.io/RML/">https://betaandbit.github.io/RML/</a></p>
 </section>
-<section id="the-caret-package" class="level2">
-<h2 class="anchored" data-anchor-id="the-caret-package">The caret Package</h2>
+<section id="the-caret-package" class="level2" data-number="22.19">
+<h2 data-number="22.19" class="anchored" data-anchor-id="the-caret-package"><span class="header-section-number">22.19</span> The caret Package</h2>
 <ul>
 <li>Max Kuhn</li>
 </ul>
 <p>The caret package (short for Classification And REgression Training) is a set of functions that attempt to streamline the process for creating predictive models.</p>
 <p>Link: <a href="https://topepo.github.io/caret/index.html">https://topepo.github.io/caret/index.html</a></p>
 </section>
-<section id="tidy-modeling-with-r" class="level2">
-<h2 class="anchored" data-anchor-id="tidy-modeling-with-r">Tidy Modeling with R</h2>
+<section id="tidy-modeling-with-r" class="level2" data-number="22.20">
+<h2 data-number="22.20" class="anchored" data-anchor-id="tidy-modeling-with-r"><span class="header-section-number">22.20</span> Tidy Modeling with R</h2>
 <ul>
 <li><a href="https://twitter.com/topepos">Max Kuhn</a></li>
 <li><a href="https://twitter.com/juliasilge">Julia Silge</a></li>
@@ -308,16 +602,16 @@ ul.task-list li input[type="checkbox"] {
 <p>This book provides an introduction to how to use the tidymodels suite of packages to create models using a tidyverse approach and encourages good methodology and statistical practice throughout demonstrated using series of applied examples.</p>
 <p>Link: <a href="https://www.tmwr.org/">https://www.tmwr.org/</a></p>
 </section>
-<section id="mlr3-book" class="level2">
-<h2 class="anchored" data-anchor-id="mlr3-book">mlr3 book</h2>
+<section id="mlr3-book" class="level2" data-number="22.21">
+<h2 data-number="22.21" class="anchored" data-anchor-id="mlr3-book"><span class="header-section-number">22.21</span> mlr3 book</h2>
 <ul>
 <li><a href="https://twitter.com/michellangts">Michel Lang</a></li>
 </ul>
 <p>The mlr3 package and <a href="https://github.com/mlr-org/mlr3/wiki/Extension-Packages">ecosystem</a> provide a generic, object-oriented, and extensible framework for classification, regression, survival analysis, and other machine learning tasks for the R language. They do not implement any learners, but provide a unified interface to many existing learners in R.</p>
 <p>Link: <a href="https://mlr3book.mlr-org.com/">https://mlr3book.mlr-org.com/</a></p>
 </section>
-<section id="sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" class="level2">
-<h2 class="anchored" data-anchor-id="sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series">sits: Data Analysis and Machine Learning on Earth Observation Data Cubes with Satellite Image Time Series</h2>
+<section id="sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series" class="level2" data-number="22.22">
+<h2 data-number="22.22" class="anchored" data-anchor-id="sits-data-analysis-and-machine-learning-on-earth-observation-data-cubes-with-satellite-image-time-series"><span class="header-section-number">22.22</span> sits: Data Analysis and Machine Learning on Earth Observation Data Cubes with Satellite Image Time Series</h2>
 <ul>
 <li>Gilberto Camara</li>
 <li>Rolf Simoes</li>
@@ -331,7 +625,6 @@ ul.task-list li input[type="checkbox"] {
 <p>Link: <a href="https://e-sensing.github.io/sitsbook/">https://e-sensing.github.io/sitsbook/</a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -581,7 +874,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/kalonji08\.github\.io\/BigBookofR-Quarto\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -909,7 +1202,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../chapters/Life Sciences.html" class="pagination-link" aria-label="Life Sciences">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Life Sciences</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../chapters/Network Analysis.html" class="pagination-link" aria-label="Network Analysis">
+        <span class="nav-page-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Network Analysis</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Big Book of R - Oscar Baruffa</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
+</div>
+  </div>
+</footer>
 
 
 
