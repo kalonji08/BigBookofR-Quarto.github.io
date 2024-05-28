@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Big Book of R - 23&nbsp; Network Analysis</title>
+<title>network-analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,14 +24,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../chapters/Packages.html" rel="next">
-<link href="../chapters/Machine Learning.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,16 +68,16 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <script async="" defer="" data-domain="bigbookofr.com" src="https://plausible.io/js/plausible.outbound-links.js"></script>
-</head><body class="nav-sidebar floating"><a rel="me" href="https://fosstodon.org/@OscarBaruffa"></a>
+</head><body><a rel="me" href="https://fosstodon.org/@OscarBaruffa"></a>
 
 
-<meta property="og:title" content="Big Book of R - 23&nbsp; Network Analysis">
+<meta property="og:title" content="">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://www.bigbookofr.com/images/big_book_social.png">
 <meta property="og:url" content="https://www.bigbookofr.com/">
 <meta property="og:site_name" content="Big Book of R">
 
-<meta name="twitter:title" content="Big Book of R - 23&nbsp; Network Analysis">
+<meta name="twitter:title" content="">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image:alt" content="400+ Free R programming books">
 <meta name="twitter:site" content="@oscarbaruffa">
@@ -94,332 +91,41 @@ ul.task-list li input[type="checkbox"] {
 
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/API.html">Books</a></li><li class="breadcrumb-item"><a href="../chapters/Network Analysis.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Network Analysis</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-        </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
-        <i class="bi bi-search"></i>
-      </button>
-    </div>
-  </nav>
-</header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
-    <div class="sidebar-title mb-0 py-0">
-      <a href="../">Big Book of R</a> 
-        <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-</div>
-    </div>
-      </div>
-        <div class="mt-2 flex-shrink-0 align-items-center">
-        <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
-        </div>
-        </div>
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Welcome :)</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../010-start_here.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">New to R? Start here</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../015-book_clubs.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Book Clubs</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Career and Community.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Career and Community</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Books</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/API.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">API</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Archeology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Archeology</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Art.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Art</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Big Data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Big Data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Blogdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Blogdown</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Bookdown.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Bookdown</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Data Science.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Data Science</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Data Visualization.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Data Visualization</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Data Databases and Engineering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Data, Databases and Engineering</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Economics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Economics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Español.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Español</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Field Specific.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Field Specific</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Finance.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Finance</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Geospatial.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Geospatial</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Getting Cleaning and Wrangling Data.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Getting, Cleaning and Wrangling Data</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Journalism.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Journalism</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Life Sciences.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Life Sciences</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Machine Learning.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Machine Learning</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Network Analysis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Network Analysis</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Packages.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Packages</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/People Analytics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">People Analytics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Psychology.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Psychology</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/R Package Development.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">R Package Development</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/R Programming.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">R Programming</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Reports.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Reports</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Shiny.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">30</span>&nbsp; <span class="chapter-title">Shiny</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Social Science.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">31</span>&nbsp; <span class="chapter-title">Social Science</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Sport Analytics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">32</span>&nbsp; <span class="chapter-title">Sport Analytics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Statistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">33</span>&nbsp; <span class="chapter-title">Statistics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Teaching.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">34</span>&nbsp; <span class="chapter-title">Teaching</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Text Analysis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">35</span>&nbsp; <span class="chapter-title">Text Analysis</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Time Series Analysis and Forecasting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">36</span>&nbsp; <span class="chapter-title">Time Series Analysis and Forecasting</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Version Control.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">37</span>&nbsp; <span class="chapter-title">Version Control</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Workflow.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">38</span>&nbsp; <span class="chapter-title">Workflow</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../chapters/Other Compendiums.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">39</span>&nbsp; <span class="chapter-title">Other Compendiums</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#awesome-network-analysis" id="toc-awesome-network-analysis" class="nav-link active" data-scroll-target="#awesome-network-analysis"><span class="header-section-number">23.1</span> Awesome network analysis</a></li>
-  <li><a href="#handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python" id="toc-handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python" class="nav-link" data-scroll-target="#handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python"><span class="header-section-number">23.2</span> Handbook of Graphs and Networks in People Analytics With Examples in R and Python</a></li>
-  <li><a href="#network-analysis-in-r-cookbook" id="toc-network-analysis-in-r-cookbook" class="nav-link" data-scroll-target="#network-analysis-in-r-cookbook"><span class="header-section-number">23.3</span> Network Analysis in R Cookbook</a></li>
-  <li><a href="#r-for-social-network-analysis" id="toc-r-for-social-network-analysis" class="nav-link" data-scroll-target="#r-for-social-network-analysis"><span class="header-section-number">23.4</span> R for Social Network Analysis</a></li>
-  <li><a href="#statistical-analysis-of-network-data-with-r" id="toc-statistical-analysis-of-network-data-with-r" class="nav-link" data-scroll-target="#statistical-analysis-of-network-data-with-r"><span class="header-section-number">23.5</span> Statistical Analysis of Network Data with R</a></li>
+  <li><a href="#network-analysis" id="toc-network-analysis" class="nav-link active" data-scroll-target="#network-analysis">Network Analysis</a>
+  <ul>
+  <li><a href="#awesome-network-analysis" id="toc-awesome-network-analysis" class="nav-link" data-scroll-target="#awesome-network-analysis">Awesome network analysis</a></li>
+  <li><a href="#handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python" id="toc-handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python" class="nav-link" data-scroll-target="#handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python">Handbook of Graphs and Networks in People Analytics With Examples in R and Python</a></li>
+  <li><a href="#network-analysis-in-r-cookbook" id="toc-network-analysis-in-r-cookbook" class="nav-link" data-scroll-target="#network-analysis-in-r-cookbook">Network Analysis in R Cookbook</a></li>
+  <li><a href="#r-for-social-network-analysis" id="toc-r-for-social-network-analysis" class="nav-link" data-scroll-target="#r-for-social-network-analysis">R for Social Network Analysis</a></li>
+  <li><a href="#statistical-analysis-of-network-data-with-r" id="toc-statistical-analysis-of-network-data-with-r" class="nav-link" data-scroll-target="#statistical-analysis-of-network-data-with-r">Statistical Analysis of Network Data with R</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../chapters/API.html">Books</a></li><li class="breadcrumb-item"><a href="../chapters/Network Analysis.html"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Network Analysis</span></a></li></ol></nav>
-<div class="quarto-title">
-<h1 class="title"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Network Analysis</span></h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
-<section id="awesome-network-analysis" class="level2" data-number="23.1">
-<h2 data-number="23.1" class="anchored" data-anchor-id="awesome-network-analysis"><span class="header-section-number">23.1</span> Awesome network analysis</h2>
+<section id="network-analysis" class="level1">
+<h1>Network Analysis</h1>
+<section id="awesome-network-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="awesome-network-analysis">Awesome network analysis</h2>
 <p>Not a book, but a compendium of resources that look really valuable.</p>
 <p>Link: <a href="https://github.com/briatte/awesome-network-analysis">https://github.com/briatte/awesome-network-analysis</a></p>
 </section>
-<section id="handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python" class="level2" data-number="23.2">
-<h2 data-number="23.2" class="anchored" data-anchor-id="handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python"><span class="header-section-number">23.2</span> Handbook of Graphs and Networks in People Analytics With Examples in R and Python</h2>
+<section id="handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python" class="level2">
+<h2 class="anchored" data-anchor-id="handbook-of-graphs-and-networks-in-people-analytics-with-examples-in-r-and-python">Handbook of Graphs and Networks in People Analytics With Examples in R and Python</h2>
 <ul>
 <li><a href="https://twitter.com/dr_keithmcnulty">Keith McNulty</a></li>
 </ul>
@@ -428,24 +134,24 @@ ul.task-list li input[type="checkbox"] {
 <p>This book aims to make the field of graph and network analysis more approachable to students and professionals by explaining the most important elements of theory and sharing common methodologies using open source programming languages like R and Python. It does so by explaining theory in as much detail as is necessary to support analytical curiosity and interpretation, and by using a wide array of example data sets and code snippets to demonstrate the specific implementation and interpretation of methodologies.</p>
 <p>Link: <a href="https://ona-book.org/">https://ona-book.org/</a></p>
 </section>
-<section id="network-analysis-in-r-cookbook" class="level2" data-number="23.3">
-<h2 data-number="23.3" class="anchored" data-anchor-id="network-analysis-in-r-cookbook"><span class="header-section-number">23.3</span> Network Analysis in R Cookbook</h2>
+<section id="network-analysis-in-r-cookbook" class="level2">
+<h2 class="anchored" data-anchor-id="network-analysis-in-r-cookbook">Network Analysis in R Cookbook</h2>
 <ul>
 <li>Sacha Epskamp</li>
 </ul>
 <p>[Oscar Baruffa: Note this resource is a bit out of date, but because there are so few available on this topic, and it might still be good as a reference, it’ll stay in Big Book of R for now.]</p>
 <p>Link: <a href="https://web.archive.org/web/20210414173702/http://sachaepskamp.com/files/Cookbook.html">https://web.archive.org/web/20210414173702/http://sachaepskamp.com/files/Cookbook.html</a></p>
 </section>
-<section id="r-for-social-network-analysis" class="level2" data-number="23.4">
-<h2 data-number="23.4" class="anchored" data-anchor-id="r-for-social-network-analysis"><span class="header-section-number">23.4</span> R for Social Network Analysis</h2>
+<section id="r-for-social-network-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="r-for-social-network-analysis">R for Social Network Analysis</h2>
 <ul>
 <li>David Schoch</li>
 </ul>
 <p>The goal of the book is to gather the most important topics in SNA in one place. “Important” is of course very subjective and it is not clear how to draw the line of what should be included and what not. We will start with the low hanging fruits, meaning repurposing our own material. That is, material from our workshops and courses (for instance what is already available here). This should cover the most generally relevant topics in SNA. Everything beyond that will be added over time as we (or the community!) deems necessary.</p>
 <p>Link: <a href="https://schochastics.github.io/R4SNA/">https://schochastics.github.io/R4SNA/</a></p>
 </section>
-<section id="statistical-analysis-of-network-data-with-r" class="level2" data-number="23.5">
-<h2 data-number="23.5" class="anchored" data-anchor-id="statistical-analysis-of-network-data-with-r"><span class="header-section-number">23.5</span> Statistical Analysis of Network Data with R</h2>
+<section id="statistical-analysis-of-network-data-with-r" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-analysis-of-network-data-with-r">Statistical Analysis of Network Data with R</h2>
 <ul>
 <li>Kolaczyk, Eric D.</li>
 <li>Csárdi, Gábor</li>
@@ -454,6 +160,7 @@ ul.task-list li input[type="checkbox"] {
 <p>Link: <a href="https://www.springer.com/us/book/9781493909834#otherversion=9781493909827">https://www.springer.com/us/book/9781493909834#otherversion=9781493909827</a></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -703,7 +410,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/kalonji08\.github\.io\/BigBookofR-Quarto\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
@@ -1031,32 +738,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../chapters/Machine Learning.html" class="pagination-link" aria-label="Machine Learning">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Machine Learning</span></span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../chapters/Packages.html" class="pagination-link" aria-label="Packages">
-        <span class="nav-page-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Packages</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Big Book of R - Oscar Baruffa</p>
-</div>   
-    <div class="nav-footer-center">
-      &nbsp;
-    </div>
-    <div class="nav-footer-right">
-<p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
-</div>
-  </div>
-</footer>
 
 
 
