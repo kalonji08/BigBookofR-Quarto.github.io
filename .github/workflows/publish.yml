@@ -4,7 +4,7 @@ on:
       - main
 name: Quarto Publish
 jobs:
-  render - book:
+  render-book:
     runs-on: ubuntu-latest
     permissions:
       contents: write
