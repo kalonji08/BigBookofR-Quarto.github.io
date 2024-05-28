@@ -46,13 +46,10 @@ To work with this repository, you need to have some tools and libraries installe
    install.packages("googlesheets4")
    install.packages("readr")
    ```
-### Automated Process for New Book Entries
+### Automated process for new book entries
 
 4. **Run the `fetch_books.R` script to automate data fetching.**
    This script automatically populates the `chapters` directory and generates the `chapter_list.txt` file. It is designed to facilitate the addition of new book entries without needing manual updates to the project structure:
-   ```bash
-   Rscript fetch_books.R
-   ```
 
 5. **Preview the book locally.**
    Immediately after running the `fetch_books.R`, preview the book using:
